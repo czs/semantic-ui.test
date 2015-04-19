@@ -1,8 +1,10 @@
 jQuery(document).ready(function($) {
 
-	$(".ts-left-sidebar").sidebar();
-
-	$(".ts-left-sidebar").sidebar("attach events", ".ts-sidebar-trigger", "trigger");
+	$(".ts-left-sidebar").sidebar({
+		onHidden:function(){
+			$('.ui.sticky').sticky('refresh');
+		}
+	}).sidebar("attach events", ".ts-sidebar-trigger", "trigger");
 
 	// $(".ts-left-sidebar").sidebar('setting', 'transition', 'overlay').sidebar("attach events", ".ts-sidebar-trigger", "trigger");
 
